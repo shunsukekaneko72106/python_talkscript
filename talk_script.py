@@ -120,7 +120,7 @@ if __name__ == '__main__':
     nb = naivebayes()
     ###ここに新規ツイートorテキストでメンヘラ判定を行うコードを挿入###
     new_text = "私は一人で休日を過ごすのが苦手だ"
-    print('メンヘラ判定 :  %s' % (nb.classify(new_text)))
+    print('トークスクリプト判定 :  %s' % (nb.classify(new_text)))
 
 
 """データのファイル名を取得"""
