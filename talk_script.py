@@ -27,6 +27,7 @@ class naivebayes():
         self.category_count = {}
 
     print(test)
+    print('#1')
 
     """形態素解析"""
     def by_mecab(self, text):
