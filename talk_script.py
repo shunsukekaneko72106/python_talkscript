@@ -13,7 +13,6 @@ import glob
 import MeCab
 
 
-test = 'ここまで実行できる'
 """ナイーブベイズ判定クラス"""
 class naivebayes():
 
@@ -26,7 +25,7 @@ class naivebayes():
         # カテゴリの出現回数をカウントするための辞書
         self.category_count = {}
 
-    print(test)
+
     print('#1')
 
     """形態素解析"""
@@ -119,14 +118,11 @@ class naivebayes():
 
 if __name__ == '__main__':
     nb = naivebayes()
-    ###ここに新規ツイートorテキストでメンヘラ判定を行うコードを挿入###
-    new_text = "私は一人で休日を過ごすのが苦手だ"
-    print('トークスクリプト判定 :  %s' % (nb.classify(new_text)))
+
 
 
 """データのファイル名を取得"""
 train_list = glob.glob('data/*.txt')
-
 
 for train in train_list:
 
@@ -139,8 +135,12 @@ for train in train_list:
     # 正解データ（ラベル）を設定
     label_name = file_name[5:-4]
 
+    print(label_name)
+
     # ツイートデータと正解データをナイーブベイズにセット
     for text in texts_list:
         nb.train(text, label_name)
 
-
+###ここに新規ツイートorテキストでメンヘラ判定を行うコードを挿入###
+new_text = "新規の顧客開拓ができます"
+print('トークスクリプト判定 :  %s' % (nb.classify(new_text)))
