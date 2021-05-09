@@ -141,6 +141,6 @@ for train in train_list:
     for text in texts_list:
         nb.train(text, label_name)
 
-###ここに新規ツイートorテキストでメンヘラ判定を行うコードを挿入###
+###判定を行うトーク挿入###
 new_text = "新規の顧客開拓ができます"
 print('トークスクリプト判定 :  %s' % (nb.classify(new_text)))
