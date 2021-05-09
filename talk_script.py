@@ -26,8 +26,6 @@ class naivebayes():
         self.category_count = {}
 
 
-    print('#1')
-
     """形態素解析"""
     def by_mecab(self, text):
         # 形態素の基本形を取得する出力フォーマットに設定
@@ -135,12 +133,10 @@ for train in train_list:
     # 正解データ（ラベル）を設定
     label_name = file_name[5:-4]
 
-    print(label_name)
-
     # ツイートデータと正解データをナイーブベイズにセット
     for text in texts_list:
         nb.train(text, label_name)
 
 ###判定を行うトーク挿入###
-new_text = "新規の顧客開拓ができます"
+new_text = "お答えできませんわかりました"
 print('トークスクリプト判定 :  %s' % (nb.classify(new_text)))
